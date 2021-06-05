@@ -1,9 +1,25 @@
 <html>
   <body>
-    <h2>Employee Details : {{101}}</h2>
-    <h2>Employee Details : {{102}}</h2>
-    <h2>Employee Details : {{103}}</h2>
-    <h2>Employee Details : {{104}}</h2>
-    <h2>Employee Details : {{105}}</h2>
+    <h2 align="center"><span style="background-color: cadetblue;"><u>Employees Information</u></span></h2>
+    <table border="1" align="center" width="40%" style="background-color: burlywood;">
+      <tr>
+        <th>Idno</th>
+        <th>Name</th>
+        <th>Salary</th>
+      </tr>
+      {% for record in data %}
+        <tr>
+          <td> {{ record.idno }}</td>
+          <td> {{ record.name }}</td>
+          {% if record.salary < 200000.00 %}
+             <td style="background-color: red;"> {{ record.salary}}</td>
+          {% elif record.salary > 250000.00 %}
+             <td style="background-color: green;"> {{ record.salary}}</td>
+          {% else %}
+             <td style="background-color: blue;"> {{ record.salary}}</td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </table>
   </body>
 </html>

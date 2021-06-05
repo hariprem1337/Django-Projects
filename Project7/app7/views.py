@@ -1,11 +1,11 @@
 from django.shortcuts import render
 
 def showIndex(request):
-    emps_info = {
-            101 : {"name1":"Hari Prem" , "salary1":200000.00},
-            102 : {"name2":"Karthik" , "salary2":250000.00},
-            103 : {"name3":"Charan" , "salary3":300000.00},
-            104 : {"name4":"Ashok" , "salary4":180000.00},
-            105 : {"name5":"Sai" , "salary5":150000.00},
-        }
-    return render(request, "main.html", emps_info)
+    emps_info = [
+        {"idno":101 , "name":"Hari Prem" , "salary":200000.00},
+        {"idno":102 , "name":"Karthik" , "salary":250000.00},
+        {"idno":103 , "name":"Charan" , "salary":300000.00},
+        {"idno":104 , "name":"Ashok" , "salary":180000.00},
+        {"idno":105 , "name":"Sai" , "salary":150000.00},
+        ]
+    return render(request, "main.html", {"data":emps_info})
