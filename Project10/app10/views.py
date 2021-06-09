@@ -11,5 +11,5 @@ def registerUser(request):
     phone_no = request.POST.get("phone_number")
 
     full_name = f_name +' '+ l_name
-    return HttpResponse(full_name)
+    return HttpResponse("Welcome"+" "+full_name)
 
