@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+</head>
+<body align="center">
+   {% if message == "True" %}
+       <h1><span style="background-color: burlywood; text-align: center">Welcome User</span> </h1>
+   {% elif message == "False" %}
+       <h1><span style="background-color: burlywood; text-align: center">Sorry...Invalid User</span> </h1>
+   {% else %}
+       <form method="post" action="/index/">
+       {% csrf_token %}
+       <table border="1" bgcolor="#faebd7" align="center">
+           <tr>
+               <th colspan="2"> User Login</th>
+           </tr>
+           <tr>
+               <td> User Name </td>
+               <td><input type="text" placeholder="User Name" name="u_name" required>*</td>
+           </tr>
+           <tr>
+               <td> Password </td>
+               <td><input type="password" placeholder="Password" name="pw" required>*</td>
+           </tr>
+           <tr>
+               <th colspan="2"><button type="submit"> Login </button> </th>
+           </tr>
+       </table>
+       </form>
+   {% endif %}
+</body>
+</html>
