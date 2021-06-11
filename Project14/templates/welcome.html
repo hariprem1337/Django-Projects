@@ -1,0 +1,14 @@
+<html>
+  <head>
+      <title> Welcome </title>
+  </head>
+<body align="center">
+  {% if message == "admin" %}
+      <h1><span style="background-color: aliceblue; text-align: center"> Welcome Admin </span></h1>
+  {% elif message == "employee" %}
+      <h1><span style="background-color: aliceblue; text-align: center"> Welcome Employee </span></h1>
+  {% else %}
+      <h1><span style="background-color: aliceblue; text-align: center"> Welcome Customer </span></h1>
+  {% endif %}
+</body>
+</html>

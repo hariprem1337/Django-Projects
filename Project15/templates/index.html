@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title> Online Calculator </title>
+</head>
+<body>
+    <form method="post" action="/calculator/">
+        {% csrf_token %}
+        <table align="center" border="1" bgcolor="#f0ffff">
+            <tr>
+                <th colspan="2"> Calculator </th>
+            </tr>
+            <tr>
+                <td> 1st Number </td>
+                <td><input type="number" placeholder="Enter 1st number" name="num1" required>*</td>
+            </tr>
+            <tr>
+                <td> 2nd Number </td>
+                <td><input type="number" placeholder="Enter 2nd number" name="num2" required>*</td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button type="submit" name="oper"> + </button>
+                    <button type="submit" name="oper"> - </button>
+                    <button type="submit" name="oper"> * </button>
+                    <button type="submit" name="oper"> / </button>
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
