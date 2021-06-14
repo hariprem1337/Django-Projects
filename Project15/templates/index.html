@@ -3,6 +3,123 @@
     <title> Online Calculator </title>
 </head>
 <body>
+   {% if message == "add" %}
+       <form method="post" action="/calculator/">
+        {% csrf_token %}
+        <table align="center" border="1" bgcolor="#f0ffff">
+            <tr>
+                <th colspan="2"> Calculator </th>
+            </tr>
+            <tr>
+                <td> 1st Number </td>
+                <td><input type="number" placeholder="Enter 1st number" name="num1" required>*</td>
+            </tr>
+            <tr>
+                <td> 2nd Number </td>
+                <td><input type="number" placeholder="Enter 2nd number" name="num2" required>*</td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button type="submit" name="cal1" value="add"> + </button>
+                    <button type="submit" name="cal2" value="sub"> - </button>
+                    <button type="submit" name="cal3" value="mul"> * </button>
+                    <button type="submit" name="cal4" value="div"> / </button>
+                </th>
+            </tr>
+            <tr>
+                <th> Result </th>
+                <th><h2> {{ value }}</h2></th>
+            </tr>
+        </table>
+       </form>
+   {% elif message == "sub" %}
+       <form method="post" action="/calculator/">
+        {% csrf_token %}
+        <table align="center" border="1" bgcolor="#f0ffff">
+            <tr>
+                <th colspan="2"> Calculator </th>
+            </tr>
+            <tr>
+                <td> 1st Number </td>
+                <td><input type="number" placeholder="Enter 1st number" name="num1" required>*</td>
+            </tr>
+            <tr>
+                <td> 2nd Number </td>
+                <td><input type="number" placeholder="Enter 2nd number" name="num2" required>*</td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button type="submit" name="cal1" value="add"> + </button>
+                    <button type="submit" name="cal2" value="sub"> - </button>
+                    <button type="submit" name="cal3" value="mul"> * </button>
+                    <button type="submit" name="cal4" value="div"> / </button>
+                </th>
+            </tr>
+            <tr>
+                <th> Result </th>
+                <th><h2> {{ value }}</h2></th>
+            </tr>
+        </table>
+       </form>
+   {% elif message == "mul" %}
+       <form method="post" action="/calculator/">
+        {% csrf_token %}
+        <table align="center" border="1" bgcolor="#f0ffff">
+            <tr>
+                <th colspan="2"> Calculator </th>
+            </tr>
+            <tr>
+                <td> 1st Number </td>
+                <td><input type="number" placeholder="Enter 1st number" name="num1" required>*</td>
+            </tr>
+            <tr>
+                <td> 2nd Number </td>
+                <td><input type="number" placeholder="Enter 2nd number" name="num2" required>*</td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button type="submit" name="cal1" value="add"> + </button>
+                    <button type="submit" name="cal2" value="sub"> - </button>
+                    <button type="submit" name="cal3" value="mul"> * </button>
+                    <button type="submit" name="cal4" value="div"> / </button>
+                </th>
+            </tr>
+            <tr>
+                <th> Result </th>
+                <th><h2> {{ value }}</h2></th>
+            </tr>
+        </table>
+       </form>
+   {% elif message == "div" %}
+       <form method="post" action="/calculator/">
+        {% csrf_token %}
+        <table align="center" border="1" bgcolor="#f0ffff">
+            <tr>
+                <th colspan="2"> Calculator </th>
+            </tr>
+            <tr>
+                <td> 1st Number </td>
+                <td><input type="number" placeholder="Enter 1st number" name="num1" required>*</td>
+            </tr>
+            <tr>
+                <td> 2nd Number </td>
+                <td><input type="number" placeholder="Enter 2nd number" name="num2" required>*</td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button type="submit" name="cal1" value="add"> + </button>
+                    <button type="submit" name="cal2" value="sub"> - </button>
+                    <button type="submit" name="cal3" value="mul"> * </button>
+                    <button type="submit" name="cal4" value="div"> / </button>
+                </th>
+            </tr>
+            <tr>
+                <th> Result </th>
+                <th><h2> {{ value }}</h2></th>
+            </tr>
+        </table>
+       </form>
+   {% else %}
     <form method="post" action="/calculator/">
         {% csrf_token %}
         <table align="center" border="1" bgcolor="#f0ffff">
@@ -19,12 +136,13 @@
             </tr>
             <tr>
                 <th colspan="2">
-                    <button type="submit" name="oper"> + </button>
-                    <button type="submit" name="oper"> - </button>
-                    <button type="submit" name="oper"> * </button>
-                    <button type="submit" name="oper"> / </button>
+                    <button type="submit" name="cal1" value="add"> + </button>
+                    <button type="submit" name="cal2" value="sub"> - </button>
+                    <button type="submit" name="cal3" value="mul"> * </button>
+                    <button type="submit" name="cal4" value="div"> / </button>
                 </th>
             </tr>
         </table>
     </form>
+   {% endif %}
 </body>
