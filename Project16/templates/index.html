@@ -1,0 +1,56 @@
+{% load static %}
+
+<html>
+<head>
+    <title> Student_Login Form </title>
+    <link rel="stylesheet" href="{% static 'css/mystylesheet.css' %}">
+</head>
+<body align="center">
+   <form method="post" action="">
+       {% csrf_token %}
+       <table align="center" border="0">
+           <tr>
+               <th><img width="100 100" src="{% static 'images/student_login.png' %}"></th>
+               <th><h1> Student Management System </h1></th>
+           </tr>
+           <tr>
+               <th colspan="2">
+                   <table align="center" border="0">
+                       <tr>
+                           <th colspan="3"><h2> Student Login </h2></th>
+                       </tr>
+                       <tr>
+                           <td rowspan="5"><img width="200 500" src="{% static 'images/login2.png' %}"></td>
+                           <td> User Name </td>
+                           <td><input type="text" placeholder="Enter User Name" required>*</td>
+                       </tr>
+                       <tr>
+                           <td> Password </td>
+                           <td><input type="password" placeholder="Enter Password" required>*</td>
+                       </tr>
+                       <tr>
+                           <th colspan="2">
+                               <button type="submit"> Login </button>
+                               <button type="reset"> Reset </button>
+                           </th>
+                       </tr>
+                       <tr>
+                           <th colspan="2" id="one"> New User </th>
+                       </tr>
+                       <tr>
+                           <th colspan="2" id="two"> Forgot Password </th>
+                       </tr>
+                   </table>
+               </th>
+           </tr>
+       </table>
+   </form>
+   <audio controls autoplay>
+       <source src="{% static 'audio/music.mp3' %}">
+   </audio><br><br>
+   <video width="320" height="240" controls autoplay>
+       <source src="{% static 'video/beach.mp4' %}">
+   </video>
+</body>
+<script src="{% static 'js/main.js' %}"> Hello </script>
+</html>
