@@ -1,0 +1,100 @@
+{% extends 'common.html' %}
+{% block head %}
+    {% include 'head.html' %}
+{% endblock %}
+{% block content %}
+    <form action="{% url 'register' %}" method="post" >
+          {% csrf_token %}
+    <div class="container register_page">
+    <table align="center" border="0">
+    <tr>
+        <th>
+            <h3> Registration Page </h3>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <div style="padding: 5px">
+            <input type="text"
+                   name="name"
+                   required
+                   class="form-control"
+                   placeholder="Name"
+                   aria-label="UserName"
+                   aria-describedby="basic-addon1">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="padding: 5px">
+            <input type="email"
+                   name="email"
+                   required
+                   class="form-control"
+                   placeholder="Email Id"
+                   aria-label="Email"
+                   aria-describedby="basic-addon1">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="padding: 5px">
+            <input type="number"
+                   name="contact"
+                   required
+                   class="form-control"
+                   placeholder="Contact Number"
+                   aria-label="ContactNumber"
+                   aria-describedby="basic-addon1">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="padding: 5px">
+            <input type="text"
+                   name="location"
+                   required
+                   class="form-control"
+                   placeholder="Location"
+                   aria-label="Location"
+                   aria-describedby="basic-addon1">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div style="padding: 5px">
+            <input type="password"
+                   name="password"
+                   required
+                   class="form-control"
+                   placeholder="Password"
+                   aria-label="Password"
+                   aria-describedby="basic-addon1">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <div style="padding: 5px" align="center">
+                <button type="submit" class="btn btn-primary"> Register </button>
+            </div>
+        </th>
+    </tr>
+        {% if message %}
+            <tr>
+            <th>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong> {{ message }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </th>
+            </tr>
+        {% endif %}
+    </table>
+    </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'common.html' %}
+{% block head %}
+    {% include 'head.html' %}
+{% endblock %}
+{% block content %}
+    {% load static %}
+    <form method="post" action="{% url 'login' %}">
+          {% csrf_token %}
+    <div class="container login_page">
+    <div align="center">
+        <h3 style="padding: 10px"> Login Page </h3>
+    </div>
+    <div style="padding: 10px">
+        <input type="email"
+               name="email"
+               required
+               class="form-control"
+               placeholder="User Email"
+               aria-label="Username"
+               aria-describedby="basic-addon1">
+    </div>
+    <div style="padding: 10px">
+        <input type="password"
+               name="password"
+               required
+               class="form-control"
+               placeholder="Password"
+               aria-label="Username"
+               aria-describedby="basic-addon1">
+    </div>
+    <div style="padding: 10px" align="center">
+        <button type="submit" class="btn btn-primary"> Login </button>
+    </div>
+        {% if message %}
+            <div style="padding: 10px">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong> {{ error_message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    </form>
+{% endblock %}

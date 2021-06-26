@@ -1,0 +1,30 @@
+.menu_head
+{
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: blue;
+    margin-bottom: 10px;
+}
+
+.login_page
+{
+    background-color: burlywood;
+    width: 350px;
+    color: white;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+.register_page
+{
+    background-color: burlywood;
+    width: 350px;
+    color: white;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}

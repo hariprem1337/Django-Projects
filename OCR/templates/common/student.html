@@ -1,0 +1,125 @@
+{% extends "common/common.html" %}
+{% block menu %}
+    {% include 'common/menu.html' %}
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table align="center" border="2" width="300" style="margin-top: 10px; margin-bottom: 10px;">
+                    <tr>
+                        <th>
+                            <div style="padding: 5px" align="center">
+                                <h4> Registration Form </h4>
+                            </div>
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="padding: 5px">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Username"
+                                       name="user_name"
+                                       required
+                                       aria-label="Username"
+                                       aria-describedby="addon-wrapping">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="padding: 5px">
+                                <input type="email"
+                                       class="form-control"
+                                       placeholder="Email ID"
+                                       name="email"
+                                       required
+                                       aria-label="EmailId"
+                                       aria-describedby="addon-wrapping">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="padding: 5px">
+                                <input type="number"
+                                       class="form-control"
+                                       placeholder="Contact Number"
+                                       name="number"
+                                       required
+                                       aria-label="ContactNumber"
+                                       aria-describedby="addon-wrapping">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="padding: 5px">
+                                <input type="password"
+                                       class="form-control"
+                                       placeholder="Password"
+                                       name="password"
+                                       required
+                                       aria-label="Passsword"
+                                       aria-describedby="addon-wrapping">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div style="padding: 5px" align="center">
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="col">
+                <table align="center" border="2" width="300" style="margin-top: 35px">
+                    <tr>
+                        <th>
+                            <div style="padding: 10px" align="center">
+                                <h4> Login Form </h4>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="padding: 10px">
+                                <input type="email"
+                                       class="form-control"
+                                       placeholder="User (Email ID)"
+                                       name="email"
+                                       required
+                                       aria-label="EmailId"
+                                       aria-describedby="addon-wrapping">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="padding: 10px">
+                                <input type="password"
+                                       class="form-control"
+                                       placeholder="Password"
+                                       name="password"
+                                       required
+                                       aria-label="Passsword"
+                                       aria-describedby="addon-wrapping">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div style="padding: 10px" align="center">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

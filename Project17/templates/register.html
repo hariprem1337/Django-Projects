@@ -1,0 +1,102 @@
+{% extends 'common.html' %}
+{% block head %}
+    {% include 'menu.html' %}
+{% endblock %}
+{% block content %}
+<form action="{% url 'register' %}" method="post">
+{% csrf_token %}
+<div class="container register_page">
+    <table align="center" border="0">
+        <tr>
+            <th>
+                <div style="padding: 5px" align="center">
+                    <h3> Registration Form </h3>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div style="padding: 5px">
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Username"
+                           name="name"
+                           required
+                           aria-label="Username"
+                           aria-describedby="addon-wrapping">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="padding: 5px">
+                    <input type="email"
+                           class="form-control"
+                           placeholder="Email"
+                           name="email"
+                           required
+                           aria-label="Email"
+                           aria-describedby="addon-wrapping">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="padding: 5px">
+                    <input type="number"
+                           class="form-control"
+                           placeholder="Contact Number"
+                           name="number"
+                           required
+                           aria-label="Contact Number"
+                           aria-describedby="addon-wrapping">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="padding: 5px">
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Location"
+                           name="location"
+                           required
+                           aria-label="Location"
+                           aria-describedby="addon-wrapping">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="padding: 5px">
+                    <input type="password"
+                           class="form-control"
+                           placeholder="Password"
+                           name="password"
+                           required
+                           aria-label="Password"
+                           aria-describedby="addon-wrapping">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div style="padding: 5px" align="center">
+                    <button type="submit" class="btn btn-dark"> Register </button>
+                </div>
+            </th>
+        </tr>
+        {% if message %}
+        <tr>
+            <th>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>{{ message }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </th>
+        </tr>
+        {% endif %}
+    </table>
+</div>
+</form>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'common.html' %}
+{% block head %}
+    {% include 'menu.html' %}
+{% endblock %}
+{% block content %}
+<form action="{% url 'login' %}" method="post">
+{% csrf_token %}
+<div class="container login_page">
+    <div style="padding: 10px;" align="center">
+        <h3> Login Form </h3>
+    </div>
+    <div style="padding: 10px;" align="center">
+        <input type="email"
+               class="form-control"
+               placeholder=" User Email"
+               name="email"
+               required
+               aria-label="Email"
+               aria-describedby="addon-wrapping">
+    </div>
+    <div style="padding: 10px;" align="center">
+        <input type="password"
+               class="form-control"
+               placeholder="Password"
+               name="password"
+               required
+               aria-label="Password"
+               aria-describedby="addon-wrapping">
+    </div>
+    <div style="padding: 10px;" align="center">
+        <button type="submit" class="btn btn-dark"> Login </button>
+    </div>
+    {% if message %}
+        <div style="padding: 10px" align="center">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    {% endif %}
+</div>
+</form>
+{% endblock %}
