@@ -9,5 +9,7 @@ urlpatterns = [
     path('faculty/', views.showFaculty, name="faculty_page"),
     path('student/', views.showStudent, name="student_page"),
     path('contact/', views.showContact, name="contact_page"),
+    path('student_registration/', views.showStudentRegistration, name="student_registration"),
+    path('student_otp/', views.showOTP, name="student_otp"),
 
 ]

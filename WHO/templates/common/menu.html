@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <h5 style="text-align: center; padding-right: 20px; padding-top: 5px"> WHO </h5>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home_page' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'covid_page' %}"> COVID-19 </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'student_page' %}"> Students </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'doctor_page' %}"> Doctors </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin_page' %}"> Admin </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact_page' %}"> Contact Us </a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>

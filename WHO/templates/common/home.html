@@ -1,0 +1,30 @@
+{% extends 'common/common.html' %}
+{% block menu %}
+    {% include 'common/menu.html' %}
+{% endblock %}
+{% block content %}
+    {% load static %}
+    <div class="container" style="margin-top: 10px; background-color: lightyellow">
+        <div class="row">
+            <div class="col">
+                <img src="{% static 'images/who-image.jpg' %}" width="450" height="400" style="padding-left: 40px; padding-top: 20px; padding-bottom: 20px ">
+            </div>
+            <div class="col">
+                <div class="sf-content-block content-block">
+                    <div><h2 style="color:#008dc9;text-align:center; padding-top: 10px">We champion health and a better future for all</h2>
+                        <p>Dedicated to the well-being of all people and guided by science, the World Health Organization leads and champions global efforts to give everyone, everywhere an equal chance to live a healthy life.&nbsp;</p>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+                <div class="section-heading">
+                    <h2>Who we are</h2>
+                </div>
+                <div class="sf-content-block content-block">
+                    <div>
+                        <p>Founded in 1948, WHO is the United Nations agency that connects nations, partners and people to promote health, keep the world safe and serve the vulnerable – so everyone, everywhere can attain the highest level of health.&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

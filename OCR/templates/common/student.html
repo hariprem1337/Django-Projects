@@ -6,6 +6,8 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                <form method="post" action="{% url 'student_registration' %}">
+                    {% csrf_token %}
                 <table align="center" border="2" width="300" style="margin-top: 10px; margin-bottom: 10px;">
                     <tr>
                         <th>
@@ -21,7 +23,8 @@
                                 <input type="text"
                                        class="form-control"
                                        placeholder="Username"
-                                       name="user_name"
+                                       name="name"
+                                       value="{{ data.0 }}"
                                        required
                                        aria-label="Username"
                                        aria-describedby="addon-wrapping">
@@ -35,6 +38,7 @@
                                        class="form-control"
                                        placeholder="Email ID"
                                        name="email"
+                                       value="{{ data.2 }}"
                                        required
                                        aria-label="EmailId"
                                        aria-describedby="addon-wrapping">
@@ -48,6 +52,7 @@
                                        class="form-control"
                                        placeholder="Contact Number"
                                        name="number"
+                                       value="{{ data.1 }}"
                                        required
                                        aria-label="ContactNumber"
                                        aria-describedby="addon-wrapping">
@@ -74,7 +79,18 @@
                             </div>
                         </th>
                     </tr>
+                    {% if data %}
+                        <tr>
+                            <th>
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                    <strong>{{ data.3 }}</strong>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            </th>
+                        </tr>
+                    {% endif %}
                 </table>
+                </form>
             </div>
             <div class="col">
                 <table align="center" border="2" width="300" style="margin-top: 35px">
