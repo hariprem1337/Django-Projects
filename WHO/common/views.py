@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from student.models import RegisterModel
 from django.db.models import Q
 from random import randint
+from django.contrib import messages
 from common.utils import sendTextMessage
 
 def showHome(request):
@@ -29,7 +30,8 @@ def showStudentRegistration(request):
             Your OTP : ''' + str(otp)
 
             if sendTextMessage(message, contact):
-                RegisterModel(name=name, email=email, contact=contact, password=password).save()
+                RegisterModel(name=name, email=email, contact=contact, password=password, otp=otp).save()
+                messages.success(request, contact)
                 return redirect('student_otp')
             else:
                 return render(request, "common/student.html", {"data": [name, email, contact, "Wrong Contact Number"]})
@@ -43,3 +45,27 @@ def showAdmin(request):
     return render(request, "common/admin.html")
 def showContact(request):
     return render(request, "common/contact.html")
+def validateStudentOTP(request):
+    if request.method == "POST":
+        contact = request.POST.get("contact")
+        student_otp = request.POST.get("student_otp")
+        try:
+            result = RegisterModel.objects.get(contact=contact, otp=student_otp)
+            result.status = "Active"
+            result.save()
+            return render(request, "common/student.html", {"message":"Your Registration was Successful : Please Login"})
+        except RegisterModel.DoesNotExist:
+            messages.success(request, contact)
+            return redirect('student_otp')
+    else:
+        return render(request, "common/otp.html")
+
+def showStudentLogin(request):
+    if request.method == "POST":
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        try:
+            stu_details = RegisterModel.objects.get(email=email, password=password)
+            return render(request, "student/student_welcome.html")
+        except RegisterModel.DoesNotExist:
+            return render(request, "common/student.html", {"error_msg": "Invalid User"})

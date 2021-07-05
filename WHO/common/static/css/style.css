@@ -11,3 +11,10 @@
     border-radius: 20px;
     border-color: black;
 }
+
+.student_otp{
+    margin: 10px;
+    border-color: darkolivegreen;
+    border-width: 2px;
+    border-style: solid;
+}

@@ -88,11 +88,21 @@
                                 </th>
                             </tr>
                         {% endif %}
+                        {% if message %}
+                            <tr>
+                                <th>
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>{{ message }}</strong>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                </th>
+                            </tr>
+                        {% endif %}
                     </table>
                 </form>
             </div>
             <div class="col">
-                <form action="#" method="post">
+                <form action="{% url 'student_login' %}" method="post">
                     {% csrf_token %}
                     <table align="center" border="0" style="margin-top: 40px" width="300" class="login_page">
                         <tr>
@@ -135,6 +145,16 @@
                                 </div>
                             </th>
                         </tr>
+                        {% if error_msg %}
+                            <tr>
+                                <th>
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>{{ error_msg }}</strong>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                </th>
+                            </tr>
+                        {% endif %}
                     </table>
                 </form>
             </div>

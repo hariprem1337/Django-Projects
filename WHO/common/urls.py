@@ -11,4 +11,6 @@ urlpatterns = [
     path('doctor/', views.showDoctor, name="doctor_page"),
     path('admin/', views.showAdmin, name="admin_page"),
     path('contact/', views.showContact, name="contact_page"),
+    path('validate_otp/', views.validateStudentOTP, name="validate_otp"),
+    path('student_login/', views.showStudentLogin, name="student_login"),
 ]
