@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2819058c-727c-4fdc-ae92-fc08a8682b63" name="Default Changelist" comment="" />
+    <list default="true" id="2819058c-727c-4fdc-ae92-fc08a8682b63" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/OCR/common/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/OCR/common/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WHO/WHO.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/WHO/WHO.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WHO/common/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WHO/common/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/OPS" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -30,6 +34,7 @@
       <option name="presentableId" value="Default" />
       <updated>1623084376487</updated>
       <workItem from="1623145042053" duration="905000" />
+      <workItem from="1625743300377" duration="69000" />
     </task>
     <servers />
   </component>

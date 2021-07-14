@@ -26,7 +26,7 @@ def showStudentRegistration(request):
         if record:
             return render(request, "common/student.html", {"data":[name,contact,email,"Email or Contact Number was already available"]})
         else:
-            otp = randint(1000, 99999)
+            otp = randint(10000, 99999)
 
             message = '''Thanks for Registered With SathyaTech,
                 To complete your Registration Use the Given OTP

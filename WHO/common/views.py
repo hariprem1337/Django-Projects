@@ -66,6 +66,9 @@ def showStudentLogin(request):
         password = request.POST.get("password")
         try:
             stu_details = RegisterModel.objects.get(email=email, password=password)
-            return render(request, "student/student_welcome.html")
+            if stu_details.status == "Active":
+                return render(request, "student/student_welcome.html")
+            else:
+                return render(request, "common/student.html", {"error_msg": "Hope your Registration was not completed successfully or Invalid User"})
         except RegisterModel.DoesNotExist:
             return render(request, "common/student.html", {"error_msg": "Invalid User"})
